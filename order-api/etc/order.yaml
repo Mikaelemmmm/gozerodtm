@@ -1,0 +1,18 @@
+Name: order
+Host: 0.0.0.0
+Port: 8888
+
+
+#rpc
+
+OrderRpcConf:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: order.rpc
+
+StockRpcConf:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: stock.rpc

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+
+package pb;
+
+
+//req 、resp
+
+message CreateReq {
+  int64 goodsId = 1;
+  int64 userId = 2;
+  int64 num = 3;
+}
+message CreateResp {
+}
+
+//service
+service order {
+   rpc create(CreateReq)returns(CreateResp);
+   rpc createRollback(CreateReq)returns(CreateResp);
+}
