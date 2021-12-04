@@ -121,6 +121,18 @@ stock-srv是库存的rprc服务，与dtm-gozero-stock数据库中stock表交互
 
 
 
+#### 4、barrier在rpc中本地事务
+
+在rpc的业务中，如果使用了barrier的话，那么在model中与db交互时候必须要用事务，并且一定要跟barrier用同一个事务
+
+logic
+
+![barrier_tx_logic](docimage/barrier_tx_logic.png)
+
+model
+
+![barrier_tx_model](docimage/barrier_tx_model.png)
+
 
 
 

@@ -21,10 +21,8 @@ var (
 type (
 	OrderModel interface {
 		FindLastOneByUserIdGoodsId(userId,goodsId int64) (*Order, error)
-		Insert(data *Order) (sql.Result, error)
-		FindOne(id int64) (*Order, error)
-		Update(data *Order) error
-		Delete(id int64) error
+		Insert(tx *sql.Tx,data *Order) (sql.Result, error)
+		Update(tx *sql.Tx,data *Order) error
 		SqlDB()(*sql.DB, error)
 	}
 
@@ -63,35 +61,15 @@ func (m *defaultOrderModel) FindLastOneByUserIdGoodsId(userId,goodsId int64) (*O
 	}
 }
 
-func (m *defaultOrderModel) Insert(data *Order) (sql.Result, error) {
+func (m *defaultOrderModel) Insert(tx *sql.Tx,data *Order) (sql.Result, error) {
 	query := fmt.Sprintf("insert into %s (%s) values (?, ?, ? ,?)", m.table, orderRowsExpectAutoSet)
-	ret, err := m.conn.Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState)
+	ret, err := sqlx.NewSessionFromTx(tx).Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState)
 	return ret, err
 }
 
-func (m *defaultOrderModel) FindOne(id int64) (*Order, error) {
-	query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", orderRows, m.table)
-	var resp Order
-	err := m.conn.QueryRow(&resp, query, id)
-	switch err {
-	case nil:
-		return &resp, nil
-	case sqlc.ErrNotFound:
-		return nil, ErrNotFound
-	default:
-		return nil, err
-	}
-}
-
-func (m *defaultOrderModel) Update(data *Order) error {
+func (m *defaultOrderModel) Update(tx *sql.Tx,data *Order) error {
 	query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, orderRowsWithPlaceHolder)
-	_, err := m.conn.Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState, data.Id)
-	return err
-}
-
-func (m *defaultOrderModel) Delete(id int64) error {
-	query := fmt.Sprintf("delete from %s where `id` = ?", m.table)
-	_, err := m.conn.Exec(query, id)
+	_, err := sqlx.NewSessionFromTx(tx).Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState, data.Id)
 	return err
 }
 

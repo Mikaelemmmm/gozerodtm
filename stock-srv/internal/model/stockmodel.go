@@ -3,29 +3,14 @@ package model
 import (
 	"database/sql"
 	"fmt"
-	"strings"
-
-	"github.com/tal-tech/go-zero/core/stores/builder"
-	"github.com/tal-tech/go-zero/core/stores/sqlc"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
-	"github.com/tal-tech/go-zero/core/stringx"
 )
 
-var (
-	stockFieldNames          = builder.RawFieldNames(&Stock{})
-	stockRows                = strings.Join(stockFieldNames, ",")
-	stockRowsExpectAutoSet   = strings.Join(stringx.Remove(stockFieldNames, "`id`", "`create_time`", "`update_time`"), ",")
-	stockRowsWithPlaceHolder = strings.Join(stringx.Remove(stockFieldNames, "`id`", "`create_time`", "`update_time`"), "=?,") + "=?"
-)
 
 type (
 	StockModel interface {
-		DecuctStock(goodsId , num int64) error
-		AddStock(goodsId , num int64) error
-		Insert(data *Stock) (sql.Result, error)
-		FindOne(id int64) (*Stock, error)
-		Update(data *Stock) error
-		Delete(id int64) error
+		DecuctStock(tx *sql.Tx,goodsId , num int64) error
+		AddStock(tx *sql.Tx,goodsId , num int64) error
 		SqlDB()(*sql.DB, error)
 	}
 
@@ -49,51 +34,15 @@ func NewStockModel(conn sqlx.SqlConn) StockModel {
 }
 
 
-func (m *defaultStockModel) DecuctStock(goodsId , num int64) error {
+func (m *defaultStockModel) DecuctStock(tx *sql.Tx,goodsId , num int64) error {
 	query := fmt.Sprintf("update %s set `num` = `num` - ? where `goods_id` = ? and num > 0", m.table)
-	_, err := m.conn.Exec(query, num, goodsId)
+	_, err := sqlx.NewSessionFromTx(tx).Exec(query, num, goodsId)
 	return err
 }
 
-
-
-func (m *defaultStockModel) AddStock(goodsId , num int64) error {
-	query := fmt.Sprintf("update %s set `num` = `num` + ? where `goods_id` = ? and num > 0", m.table)
-	_, err := m.conn.Exec(query, num, goodsId)
-	return err
-}
-
-func (m *defaultStockModel) Insert(data *Stock) (sql.Result, error) {
-	query := fmt.Sprintf("insert into %s (%s) values (?, ?)", m.table, stockRowsExpectAutoSet)
-	ret, err := m.conn.Exec(query, data.GoodsId, data.Num)
-	return ret, err
-}
-
-func (m *defaultStockModel) FindOne(id int64) (*Stock, error) {
-	query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", stockRows, m.table)
-	var resp Stock
-	err := m.conn.QueryRow(&resp, query, id)
-	switch err {
-	case nil:
-		return &resp, nil
-	case sqlc.ErrNotFound:
-		return nil, ErrNotFound
-	default:
-		return nil, err
-	}
-}
-
-
-func (m *defaultStockModel) Update(data *Stock) error {
-	query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, stockRowsWithPlaceHolder)
-	_, err := m.conn.Exec(query, data.GoodsId, data.Num, data.Id)
-	return err
-}
-
-
-func (m *defaultStockModel) Delete(id int64) error {
-	query := fmt.Sprintf("delete from %s where `id` = ?", m.table)
-	_, err := m.conn.Exec(query, id)
+func (m *defaultStockModel) AddStock(tx *sql.Tx,goodsId , num int64) error {
+	query := fmt.Sprintf("update %s set `num` = `num` + ? where `goods_id` = ?", m.table)
+	_, err :=sqlx.NewSessionFromTx(tx).Exec(query, num, goodsId)
 	return err
 }
 

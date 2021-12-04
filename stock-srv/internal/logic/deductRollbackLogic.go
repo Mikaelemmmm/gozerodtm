@@ -45,7 +45,7 @@ func (l *DeductRollbackLogic) DeductRollback(in *pb.DecuctReq) (*pb.DeductResp, 
 	}
 	if err := barrier.Call(tx, func(db dtmcli.DB) error {
 
-		if err := l.svcCtx.StockModel.AddStock(in.GoodsId, in.Num);err!= nil{
+		if err := l.svcCtx.StockModel.AddStock(tx,in.GoodsId, in.Num);err!= nil{
 			return fmt.Errorf("回滚库存失败 err : %v ,goodsId:%d , num :%d", err,in.GoodsId,in.Num)
 		}
 		return nil

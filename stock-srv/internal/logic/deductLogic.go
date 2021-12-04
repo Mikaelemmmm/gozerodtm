@@ -44,12 +44,13 @@ func (l *DeductLogic) Deduct(in *pb.DecuctReq) (*pb.DeductResp, error) {
 	}
 	if err := barrier.Call(tx, func(db dtmcli.DB) error {
 
-		// ！！开启测试！！ ： 测试订单回滚更改状态为失效，并且当前库扣失败不需要回滚
-		//return fmt.Errorf("扣库存失败 err : %v , in:%+v \n",err,in)
-
-		if err := l.svcCtx.StockModel.DecuctStock(in.GoodsId, in.Num);err!= nil{
+		if err := l.svcCtx.StockModel.DecuctStock(tx,in.GoodsId, in.Num);err!= nil{
 			return fmt.Errorf("扣库存失败 err : %v , in:%+v \n",err,in)
 		}
+
+		//！！开启测试！！ ： 测试订单回滚更改状态为失效，并且当前库扣失败不需要回滚
+		//return fmt.Errorf("扣库存失败 err : %v , in:%+v \n",err,in)
+
 		return nil
 	});err != nil{
 		logx.Errorf("err : %v \n" , err)

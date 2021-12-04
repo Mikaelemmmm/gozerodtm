@@ -17,7 +17,7 @@ import (
 )
 
 
-var configFile = flag.String("f", "/Users/mikael/Developer/goenv/gozerodtm/order-api/etc/order.yaml", "the config file")
+var configFile = flag.String("f", "etc/order.yaml", "the config file")
 
 func main() {
 

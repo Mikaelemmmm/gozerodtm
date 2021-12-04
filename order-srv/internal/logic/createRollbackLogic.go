@@ -56,7 +56,7 @@ func (l *CreateRollbackLogic) CreateRollback(in *pb.CreateReq) (*pb.CreateResp, 
 		if err := barrier.Call(tx, func(db dtmcli.DB) error {
 
 			order.RowState = -1
-			if err := l.svcCtx.OrderModel.Update(order);err!= nil{
+			if err := l.svcCtx.OrderModel.Update(tx,order);err!= nil{
 				return fmt.Errorf("回滚订单失败  err : %v , userId:%d , goodsId:%d",err,in.UserId,in.GoodsId)
 			}
 

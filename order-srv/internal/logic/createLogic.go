@@ -51,7 +51,7 @@ func (l *CreateLogic) Create(in *pb.CreateReq) (*pb.CreateResp, error) {
 		order.Num = in.Num
 		order.UserId = in.UserId
 
-		_, err = l.svcCtx.OrderModel.Insert(order)
+		_, err = l.svcCtx.OrderModel.Insert(tx,order)
 		if err != nil {
 			return fmt.Errorf("创建订单失败 err : %v , order:%+v \n", err, order)
 		}
