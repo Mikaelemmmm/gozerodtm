@@ -141,5 +141,5 @@ stock-srv是库存的rprc服务，与dtm-gozero-stock数据库中stock表交互
 
 这个基本没啥难度，grpc会了这个很简单，鉴于go在微服务中去使用http场景不多，这里就不详细去做了，我之前一个版本写过一个简单的，但是没这个完善，有兴趣可以去看下，不过那个barrier是自己基于go-zero的sqlx，将dtm的官方的做了修改，现在不需要了。
 
-项目地址：[](https://github.com/Mikaelemmmm/dtmbarrier-go-zero)
+项目地址：[https://github.com/Mikaelemmmm/dtmbarrier-go-zero](https://github.com/Mikaelemmmm/dtmbarrier-go-zero)
 
