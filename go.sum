@@ -385,6 +385,8 @@ github.com/xdg-go/stringprep v1.0.2/go.mod h1:8F9zXuvzgwmyT5DUm4GUfZGDdT3W+LCvS6
 github.com/yedf/dtmcli v1.5.1/go.mod h1:errG1rA5vaT70B00s6cAKo7O/tD1CLI8CGrESSaTsqw=
 github.com/yedf/dtmcli v1.6.0 h1:OLIGqAYz2ThD3HVhWq0ZpgOsqb96SWHrzTXsjDhWgug=
 github.com/yedf/dtmcli v1.6.0/go.mod h1:errG1rA5vaT70B00s6cAKo7O/tD1CLI8CGrESSaTsqw=
+github.com/yedf/dtmcli v1.6.2 h1:R5jx7/n0vmtvbPhO6o5NuEjnxSFuAk9kZwBb2Qi4rPc=
+github.com/yedf/dtmcli v1.6.2/go.mod h1:errG1rA5vaT70B00s6cAKo7O/tD1CLI8CGrESSaTsqw=
 github.com/yedf/dtmdriver v0.0.0-20211201142343-983b402db011/go.mod h1:T8UO5jNjNW5wPy3bfsw4rJMbWYM6ZZUVJr93eoCRP4E=
 github.com/yedf/dtmdriver v0.0.0-20211202092330-86dce681d5db/go.mod h1:aeo6ZWiVI0x8P8O18r6uB1cG2uw9BCQyYZaH15MlRDI=
 github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e h1:xXyb4mr46T5KqR5SXd37ivXNJ33k/MSAAwsGP6btmh8=
@@ -399,6 +401,8 @@ github.com/yedf/dtmdriver-sample v0.0.0-20211202045537-b56448c00fdf/go.mod h1:/7
 github.com/yedf/dtmgrpc v1.5.1/go.mod h1:1SqecC5mD5nsDOaNC6tu5HwKkLVrLECU0/KJ1K66NKY=
 github.com/yedf/dtmgrpc v1.6.0 h1:JETffa7j8Rhrc6eC4yGl/dwORGvSIJnOcqWM26oXm6E=
 github.com/yedf/dtmgrpc v1.6.0/go.mod h1:dTA8NYBm7Kw0QZK8kjuqAP4BIoTGqyEUYcyOzjZRAGE=
+github.com/yedf/dtmgrpc v1.6.2 h1:Q40lNKSkM/p/PJraiesH+dB/R7dhnmDWREHqhd3RX9Q=
+github.com/yedf/dtmgrpc v1.6.2/go.mod h1:j0wOEefb+rM3ggDKofBUZhNaT0DJ05FVkP5lPh/c55M=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
@@ -514,6 +518,8 @@ golang.org/x/net v0.0.0-20211029224645-99673261e6eb/go.mod h1:9nx3DQGgdP8bBQD5qx
 golang.org/x/net v0.0.0-20211105192438-b53810dc28af/go.mod h1:9nx3DQGgdP8bBQD5qxJ1jj9UTztislL4KSBs9R2vV5Y=
 golang.org/x/net v0.0.0-20211201190559-0a0e4e1bb54c h1:WtYZ93XtWSO5KlOMgPZu7hXY9WhMZpprvlm5VwvAl8c=
 golang.org/x/net v0.0.0-20211201190559-0a0e4e1bb54c/go.mod h1:9nx3DQGgdP8bBQD5qxJ1jj9UTztislL4KSBs9R2vV5Y=
+golang.org/x/net v0.0.0-20211203184738-4852103109b8 h1:PFkPt/jI9Del3hmFplBtRp8tDhSRpFu7CyRs7VmEC0M=
+golang.org/x/net v0.0.0-20211203184738-4852103109b8/go.mod h1:9nx3DQGgdP8bBQD5qxJ1jj9UTztislL4KSBs9R2vV5Y=
 golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be/go.mod h1:N/0e6XlmueqKjAGxoOufVs8QHGRruUQn6yWY3a++T0U=
 golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421/go.mod h1:gOpvHmFTYa4IltrdGE7lF6nIHvwfUNPOp7c8zoXwtLw=
 golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45/go.mod h1:gOpvHmFTYa4IltrdGE7lF6nIHvwfUNPOp7c8zoXwtLw=

@@ -2,12 +2,13 @@ package logic
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
-	"github.com/yedf/dtmcli"
+	"gozerodtm/order-srv/internal/model"
+
 	"github.com/yedf/dtmgrpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"gozerodtm/order-srv/internal/model"
 
 	"gozerodtm/order-srv/internal/svc"
 	"gozerodtm/order-srv/pb"
@@ -31,46 +32,38 @@ func NewCreateRollbackLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Cr
 
 func (l *CreateRollbackLogic) CreateRollback(in *pb.CreateReq) (*pb.CreateResp, error) {
 
-	fmt.Printf("订单回滚  , in: %+v \n",in)
+	fmt.Printf("订单回滚  , in: %+v \n", in)
 
 	order, err := l.svcCtx.OrderModel.FindLastOneByUserIdGoodsId(in.UserId, in.GoodsId)
-	if err != nil && err != model.ErrNotFound{
+	if err != nil && err != model.ErrNotFound {
 		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
-		return nil,status.Error(codes.Internal,err.Error())
+		return nil, status.Error(codes.Internal, err.Error())
 	}
 
-	if order != nil{
+	if order != nil {
 
 		barrier, err := dtmgrpc.BarrierFromGrpc(l.ctx)
 		db, err := l.svcCtx.OrderModel.SqlDB()
 		if err != nil {
 			//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
-			return nil,status.Error(codes.Internal,err.Error())
+			return nil, status.Error(codes.Internal, err.Error())
 		}
-		tx, err := db.Begin()
-		if err != nil {
-			//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
-			return nil,status.Error(codes.Internal,err.Error())
-		}
-		if err := barrier.Call(tx, func(db dtmcli.DB) error {
+		if err := barrier.CallWithDB(db, func(tx *sql.Tx) error {
 
 			order.RowState = -1
-			if err := l.svcCtx.OrderModel.Update(tx,order);err!= nil{
-				return fmt.Errorf("回滚订单失败  err : %v , userId:%d , goodsId:%d",err,in.UserId,in.GoodsId)
+			if err := l.svcCtx.OrderModel.Update(tx, order); err != nil {
+				return fmt.Errorf("回滚订单失败  err : %v , userId:%d , goodsId:%d", err, in.UserId, in.GoodsId)
 			}
 
 			return nil
-		});err != nil{
-			logx.Errorf("err : %v \n" , err)
+		}); err != nil {
+			logx.Errorf("err : %v \n", err)
 
 			//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
 			return nil, status.Error(codes.Internal, err.Error())
 		}
 
 	}
-
-
-
 
 	return &pb.CreateResp{}, nil
 }
