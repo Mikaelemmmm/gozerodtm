@@ -6,7 +6,7 @@
 
 #### go-zero 1.2.4版本以上，这个一定要注意
 
-#### dtm 你用最新的就行了 
+#### dtm 你用最新的就行了
 
 
 
@@ -17,18 +17,6 @@
 ```shell
 git clone https://github.com/yedf/dtm.git
 ```
-
-
-
-### 三、创建mysql数据库
-
-1、先在mysql数据库创建好dtm库
-
-2、找到文件夹dtm/dtmsvr下，dtmsvr.mysql.sql执行，生成需要的表
-
-3、先在mysql数据库创建好dtm_barrier库 （这个库名不能改）后面dtm的barrier会用到，里面写死的，你改了库名找不到表找我～
-
-4、找到文件夹dtm/dtmcli文件夹下，barrier.mysql.sql执行，（这个表名不要改），后面dtm的barrier会用到，里面写死的，你改了库名找不到表找我～
 
 
 
@@ -63,17 +51,17 @@ Target: 'etcd://localhost:2379/dtmservice'  将当前dtm的server直接注册到
 
 ### 四、启动dtm server
 
-在dtm项目根目录下 
+在dtm项目根目录下
 
 ```shell
-go run app/main.go dtmsvr
+go run app/main.go dev
 ```
 
 
 
 ### 五、使用go-zero的grpc对接dtm
 
-项目地址 ： 
+项目地址 ：
 
 
 
@@ -81,7 +69,7 @@ go run app/main.go dtmsvr
 
 order-api是http服务入口
 
-order-srv是订单的rprc服务，与dtm-gozero-order数据库中order表交互 
+order-srv是订单的rprc服务，与dtm-gozero-order数据库中order表交互
 
 stock-srv是库存的rprc服务，与dtm-gozero-stock数据库中stock表交互
 
