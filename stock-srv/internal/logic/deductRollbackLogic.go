@@ -35,23 +35,23 @@ func (l *DeductRollbackLogic) DeductRollback(in *pb.DecuctReq) (*pb.DeductResp, 
 	barrier, err := dtmgrpc.BarrierFromGrpc(l.ctx)
 	db, err := l.svcCtx.StockModel.SqlDB()
 	if err != nil {
-		logx.Errorf("获取sqlDB失败 err : %v",err)
-		return nil,status.Error(codes.Aborted,dtmcli.ResultFailure)
+		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
+		return nil,status.Error(codes.Internal,err.Error())
 	}
 	tx, err := db.Begin()
 	if err != nil {
-		logx.Errorf("开启事务失败 err : %v",err)
-		return nil,status.Error(codes.Aborted,dtmcli.ResultFailure)
+		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
+		return nil,status.Error(codes.Internal,err.Error())
 	}
 	if err := barrier.Call(tx, func(db dtmcli.DB) error {
-
 		if err := l.svcCtx.StockModel.AddStock(tx,in.GoodsId, in.Num);err!= nil{
 			return fmt.Errorf("回滚库存失败 err : %v ,goodsId:%d , num :%d", err,in.GoodsId,in.Num)
 		}
 		return nil
 	});err != nil{
 		logx.Errorf("err : %v \n" , err)
-		return nil,status.Error(codes.Aborted,dtmcli.ResultFailure)
+		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
+		return nil,status.Error(codes.Internal,err.Error())
 	}
 
 	return &pb.DeductResp{}, nil

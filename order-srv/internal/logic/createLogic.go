@@ -36,13 +36,13 @@ func (l *CreateLogic) Create(in *pb.CreateReq) (*pb.CreateResp, error) {
 	barrier, err := dtmgrpc.BarrierFromGrpc(l.ctx)
 	db, err := l.svcCtx.OrderModel.SqlDB()
 	if err != nil {
-		logx.Errorf("获取sqlDB失败 err : %v",err)
-		return nil,status.Error(codes.Aborted,dtmcli.ResultFailure)
+		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
+		return nil,status.Error(codes.Internal,err.Error())
 	}
 	tx, err := db.Begin()
 	if err != nil {
-		logx.Errorf("开启事务失败 err : %v",err)
-		return nil,status.Error(codes.Aborted,dtmcli.ResultFailure)
+		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
+		return nil,status.Error(codes.Internal,err.Error())
 	}
 	if err := barrier.Call(tx, func(db dtmcli.DB) error {
 
@@ -58,10 +58,8 @@ func (l *CreateLogic) Create(in *pb.CreateReq) (*pb.CreateResp, error) {
 
 		return nil
 	});err != nil{
-		logx.Errorf("err : %v \n" , err)
-
-		//这里如果想dtm回滚 ，grpc返回错误必须是codes.Aborted,dtmcli.ResultFailure，dtm就是根据这个判断的，没有为什么
-		return nil, status.Error(codes.Aborted, dtmcli.ResultFailure)
+		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
+		return nil,status.Error(codes.Internal,err.Error())
 	}
 
 	return &pb.CreateResp{}, nil

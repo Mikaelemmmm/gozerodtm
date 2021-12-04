@@ -3,12 +3,20 @@ package model
 import (
 	"database/sql"
 	"fmt"
+	"github.com/tal-tech/go-zero/core/stores/builder"
+	"github.com/tal-tech/go-zero/core/stores/sqlc"
 	"github.com/tal-tech/go-zero/core/stores/sqlx"
+	"strings"
 )
 
+var (
+	stockFieldNames          = builder.RawFieldNames(&Stock{})
+	stockRows                = strings.Join(stockFieldNames, ",")
+)
 
 type (
 	StockModel interface {
+		FindOneByGoodsId(goodsId int64) (*Stock, error)
 		DecuctStock(tx *sql.Tx,goodsId , num int64) error
 		AddStock(tx *sql.Tx,goodsId , num int64) error
 		SqlDB()(*sql.DB, error)
@@ -30,6 +38,20 @@ func NewStockModel(conn sqlx.SqlConn) StockModel {
 	return &defaultStockModel{
 		conn:  conn,
 		table: "`stock`",
+	}
+}
+
+func (m *defaultStockModel) FindOneByGoodsId(goodsId int64) (*Stock, error) {
+	query := fmt.Sprintf("select %s from %s where `goods_id` = ? limit 1", stockRows, m.table)
+	var resp Stock
+	err := m.conn.QueryRow(&resp, query, goodsId)
+	switch err {
+	case nil:
+		return &resp, nil
+	case sqlc.ErrNotFound:
+		return nil, ErrNotFound
+	default:
+		return nil, err
 	}
 }
 

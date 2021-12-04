@@ -111,8 +111,6 @@ stock-srv是库存的rprc服务，与dtm-gozero-stock数据库中stock表交互
 
 
 
-
-
 #### 3、barrier的空补偿、悬挂等
 
 之前准备工作中，我们创建了dtm_barrier库以及执行了barrier.mysql.sql，这个其实就是为我们的业务服务做了一个检查，防止空补偿，具体可以看barrier.Call中源码，没几行代码可以看懂的。
