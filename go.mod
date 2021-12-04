@@ -4,11 +4,11 @@ go 1.17
 
 require (
 	github.com/tal-tech/go-zero v1.2.4
-	github.com/yedf/dtmcli v1.6.0
+	github.com/yedf/dtmcli v1.6.2
 	github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e
 	github.com/yedf/dtmdriver-clients v0.0.0-20211203105811-3cdc12e3cffa
 	github.com/yedf/dtmdriver-gozero v0.0.0-20211203060349-1f6f1b3d3c86
-	github.com/yedf/dtmgrpc v1.6.0
+	github.com/yedf/dtmgrpc v1.6.2
 	google.golang.org/grpc v1.42.0
 	google.golang.org/protobuf v1.27.1
 )
@@ -56,7 +56,6 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.17.0 // indirect
 	golang.org/x/crypto v0.0.0-20210920023735-84f357641f63 // indirect
-	golang.org/x/net v0.0.0-20211201190559-0a0e4e1bb54c // indirect
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
 	golang.org/x/sys v0.0.0-20211106132015-ebca88c72f68 // indirect
 	golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1 // indirect
