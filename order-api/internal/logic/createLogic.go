@@ -56,6 +56,9 @@ func (l *CreateLogic) Create(req types.QuickCreateReq,r *http.Request) (*types.Q
 
 	err = saga.Submit()
 	dtmimp.FatalIfError(err)
+	if err != nil{
+		return nil,fmt.Errorf("submit data to  dtm-server err  : %+v \n",err)
+	}
 
 	return &types.QuickCreateResp{}, nil
 }
