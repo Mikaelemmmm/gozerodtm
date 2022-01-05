@@ -4,9 +4,8 @@ go 1.17
 
 require (
 	github.com/tal-tech/go-zero v1.2.4
+	github.com/yedf/driver-gozero v0.0.0-20211222015254-ae7db6554110
 	github.com/yedf/dtmcli v1.6.2
-	github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e
-	github.com/yedf/dtmdriver-gozero v0.0.0-20211204083751-a14485949435
 	github.com/yedf/dtmgrpc v1.6.2
 	google.golang.org/grpc v1.42.0
 	google.golang.org/protobuf v1.27.1
@@ -42,7 +41,8 @@ require (
 	github.com/prometheus/common v0.26.0 // indirect
 	github.com/prometheus/procfs v0.6.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
-	github.com/yedf/driver-gozero v0.0.0-20211222015254-ae7db6554110 // indirect
+	github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e // indirect
+	github.com/yedf/dtmdriver-gozero v0.0.0-20211204083751-a14485949435 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.1 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.1 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.1 // indirect

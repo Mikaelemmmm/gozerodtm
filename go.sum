@@ -387,8 +387,6 @@ github.com/yedf/dtmcli v1.6.2/go.mod h1:errG1rA5vaT70B00s6cAKo7O/tD1CLI8CGrESSaT
 github.com/yedf/dtmdriver v0.0.0-20211202092330-86dce681d5db/go.mod h1:aeo6ZWiVI0x8P8O18r6uB1cG2uw9BCQyYZaH15MlRDI=
 github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e h1:xXyb4mr46T5KqR5SXd37ivXNJ33k/MSAAwsGP6btmh8=
 github.com/yedf/dtmdriver v0.0.0-20211203060147-29426c663b6e/go.mod h1:aeo6ZWiVI0x8P8O18r6uB1cG2uw9BCQyYZaH15MlRDI=
-github.com/yedf/dtmdriver-gozero v0.0.0-20211203060349-1f6f1b3d3c86 h1:7zFdgspt3aIRvs9rgzp1mE79lKpN9CoOuZtyCaZ2PoY=
-github.com/yedf/dtmdriver-gozero v0.0.0-20211203060349-1f6f1b3d3c86/go.mod h1:RYtA6oZny6LzlIRb1tPGt5bHfgqws/JaU6ogFly8ByQ=
 github.com/yedf/dtmdriver-gozero v0.0.0-20211204083751-a14485949435 h1:qLBNU16bK1ZeaZ6tmfarf49qx9O9sUJAe7/IzoXpuEg=
 github.com/yedf/dtmdriver-gozero v0.0.0-20211204083751-a14485949435/go.mod h1:RYtA6oZny6LzlIRb1tPGt5bHfgqws/JaU6ogFly8ByQ=
 github.com/yedf/dtmgrpc v1.6.2 h1:Q40lNKSkM/p/PJraiesH+dB/R7dhnmDWREHqhd3RX9Q=
