@@ -57,8 +57,9 @@ func (m *defaultStockModel) FindOneByGoodsId(goodsId int64) (*Stock, error) {
 
 
 func (m *defaultStockModel) DecuctStock(tx *sql.Tx,goodsId , num int64) (sql.Result,error) {
-	query := fmt.Sprintf("update %s set `num` = `num` - ? where `goods_id` = ? and num - ? > 0", m.table)
+	query := fmt.Sprintf("update %s set `num` = `num` - ? where `goods_id` = ? and num >= ?", m.table)
 	return sqlx.NewSessionFromTx(tx).Exec(query, num, goodsId,num)
+
 }
 
 func (m *defaultStockModel) AddStock(tx *sql.Tx,goodsId , num int64) error {
