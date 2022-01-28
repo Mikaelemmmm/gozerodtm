@@ -19,7 +19,6 @@ type (
 		FindOneByGoodsId(goodsId int64) (*Stock, error)
 		DecuctStock(tx *sql.Tx,goodsId , num int64) (sql.Result,error)
 		AddStock(tx *sql.Tx,goodsId , num int64) error
-		SqlDB()(*sql.DB, error)
 	}
 
 	defaultStockModel struct {
@@ -68,9 +67,3 @@ func (m *defaultStockModel) AddStock(tx *sql.Tx,goodsId , num int64) error {
 	return err
 }
 
-/**
-暴露给dtm barrier使用
-*/
-func (m *defaultStockModel) SqlDB()(*sql.DB, error) {
-	return m.conn.RawDB()
-}

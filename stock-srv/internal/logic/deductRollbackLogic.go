@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"github.com/tal-tech/go-zero/core/stores/sqlx"
 
 	"github.com/yedf/dtmgrpc"
 	"google.golang.org/grpc/codes"
@@ -34,7 +35,7 @@ func (l *DeductRollbackLogic) DeductRollback(in *pb.DecuctReq) (*pb.DeductResp, 
 	fmt.Printf("库存回滚 in : %+v \n", in)
 
 	barrier, err := dtmgrpc.BarrierFromGrpc(l.ctx)
-	db, err := l.svcCtx.StockModel.SqlDB()
+	db, err := sqlx.NewMysql(l.svcCtx.Config.DB.DataSource).RawDB()
 	if err != nil {
 		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
 		return nil, status.Error(codes.Internal, err.Error())

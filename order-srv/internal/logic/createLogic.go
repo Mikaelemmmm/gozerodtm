@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"gozerodtm/order-srv/internal/model"
 	"gozerodtm/order-srv/internal/svc"
 	"gozerodtm/order-srv/pb"
@@ -35,7 +36,8 @@ func (l *CreateLogic) Create(in *pb.CreateReq) (*pb.CreateResp, error) {
 
 	//barrier防止空补偿、空悬挂等具体看dtm官网即可，别忘记加barrier表在当前库中，因为判断补偿与要执行的sql一起本地事务
 	barrier, err := dtmgrpc.BarrierFromGrpc(l.ctx)
-	db, err := l.svcCtx.OrderModel.SqlDB()
+	db, err := sqlx.NewMysql(l.svcCtx.Config.DB.DataSource).RawDB()
+
 	if err != nil {
 		//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
 		return nil, status.Error(codes.Internal, err.Error())

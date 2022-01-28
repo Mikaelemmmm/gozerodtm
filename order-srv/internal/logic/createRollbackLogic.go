@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"github.com/tal-tech/go-zero/core/stores/sqlx"
 	"gozerodtm/order-srv/internal/model"
 
 	"github.com/yedf/dtmgrpc"
@@ -43,7 +44,7 @@ func (l *CreateRollbackLogic) CreateRollback(in *pb.CreateReq) (*pb.CreateResp, 
 	if order != nil {
 
 		barrier, err := dtmgrpc.BarrierFromGrpc(l.ctx)
-		db, err := l.svcCtx.OrderModel.SqlDB()
+		db, err := sqlx.NewMysql(l.svcCtx.Config.DB.DataSource).RawDB()
 		if err != nil {
 			//!!!一般数据库不会错误不需要dtm回滚，就让他一直重试，这时候就不要返回codes.Aborted, dtmcli.ResultFailure 就可以了，具体自己把控!!!
 			return nil, status.Error(codes.Internal, err.Error())

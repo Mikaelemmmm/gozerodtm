@@ -23,7 +23,6 @@ type (
 		FindLastOneByUserIdGoodsId(userId,goodsId int64) (*Order, error)
 		Insert(tx *sql.Tx,data *Order) (sql.Result, error)
 		Update(tx *sql.Tx,data *Order) error
-		SqlDB()(*sql.DB, error)
 	}
 
 	defaultOrderModel struct {
@@ -73,9 +72,3 @@ func (m *defaultOrderModel) Update(tx *sql.Tx,data *Order) error {
 	return err
 }
 
-/**
- 	暴露给dtm barrier使用
- */
-func (m *defaultOrderModel) SqlDB()(*sql.DB, error) {
-	return m.conn.RawDB()
-}
