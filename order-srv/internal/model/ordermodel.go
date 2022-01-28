@@ -62,13 +62,12 @@ func (m *defaultOrderModel) FindLastOneByUserIdGoodsId(userId,goodsId int64) (*O
 
 func (m *defaultOrderModel) Insert(tx *sql.Tx,data *Order) (sql.Result, error) {
 	query := fmt.Sprintf("insert into %s (%s) values (?, ?, ? ,?)", m.table, orderRowsExpectAutoSet)
-	ret, err := sqlx.NewSessionFromTx(tx).Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState)
-	return ret, err
+	return tx.Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState)
 }
 
 func (m *defaultOrderModel) Update(tx *sql.Tx,data *Order) error {
 	query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, orderRowsWithPlaceHolder)
-	_, err := sqlx.NewSessionFromTx(tx).Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState, data.Id)
+	_, err := tx.Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState, data.Id)
 	return err
 }
 
