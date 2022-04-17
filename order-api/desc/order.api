@@ -3,8 +3,6 @@ syntax = "v1"
 info(
 	title: "快速下单"
 	desc: "快速下单 dtm分布式事务 下单、扣减库存"
-	author: "mikael"
-	email: "13247629622@163.com"
 	version: "v1"
 )
 

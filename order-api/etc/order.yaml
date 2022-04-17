@@ -12,7 +12,7 @@ OrderRpcConf:
     Key: order.rpc
 
 #OrderRpcConf:
-#  Target: consul://127.0.0.1:8500/order.rpc?wait=14s
+#  Target: consul://127.0.0.1:8500/order.rpc
 
 StockRpcConf:
   Etcd:
@@ -21,4 +21,4 @@ StockRpcConf:
     Key: stock.rpc
 
 #StockRpcConf:
-#  Target: consul://127.0.0.1:8500/stock.rpc?wait=14s
+#  Target: consul://127.0.0.1:8500/stock.rpc
