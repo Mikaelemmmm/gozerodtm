@@ -1,6 +1,6 @@
 Name: order
 Host: 0.0.0.0
-Port: 8888
+Port: 8889
 
 
 #rpc
@@ -11,8 +11,14 @@ OrderRpcConf:
       - 127.0.0.1:2379
     Key: order.rpc
 
+#OrderRpcConf:
+#  Target: consul://127.0.0.1:8500/order.rpc?wait=14s
+
 StockRpcConf:
   Etcd:
     Hosts:
       - 127.0.0.1:2379
     Key: stock.rpc
+
+#StockRpcConf:
+#  Target: consul://127.0.0.1:8500/stock.rpc?wait=14s

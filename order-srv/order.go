@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	//"github.com/zeromicro/zero-contrib/zrpc/registry/consul" //if consul use
 	"gozerodtm/order-srv/internal/config"
 	"gozerodtm/order-srv/internal/server"
 	"gozerodtm/order-srv/internal/svc"
@@ -33,6 +34,8 @@ func main() {
 		}
 	})
 	defer s.Stop()
+
+	//_ = consul.RegisterService(c.ListenOn, c.Consul) //if consul use
 
 	fmt.Printf("Starting rpc server at %s...\n", c.ListenOn)
 	s.Start()

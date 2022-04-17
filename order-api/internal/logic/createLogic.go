@@ -15,9 +15,10 @@ import (
 	"github.com/yedf/dtmgrpc"
 )
 
-
 // dtm已经通过配置，注册到下面这个地址，因此在dtmgrpc中使用该地址
 var dtmServer = "etcd://localhost:2379/dtmservice"
+
+//var dtmServer = "consul://127.0.0.1:8500/dtmservice"
 
 type CreateLogic struct {
 	logx.Logger
@@ -33,19 +34,19 @@ func NewCreateLogic(ctx context.Context, svcCtx *svc.ServiceContext) CreateLogic
 	}
 }
 
-func (l *CreateLogic) Create(req types.QuickCreateReq,r *http.Request) (*types.QuickCreateResp, error) {
+func (l *CreateLogic) Create(req types.QuickCreateReq, r *http.Request) (*types.QuickCreateResp, error) {
 
 	orderRpcBusiServer, err := l.svcCtx.Config.OrderRpcConf.BuildTarget()
-	if err != nil{
-		return nil,fmt.Errorf("下单异常超时")
+	if err != nil {
+		return nil, fmt.Errorf("下单异常超时")
 	}
 	stockRpcBusiServer, err := l.svcCtx.Config.StockRpcConf.BuildTarget()
-	if err != nil{
-		return nil,fmt.Errorf("下单异常超时")
+	if err != nil {
+		return nil, fmt.Errorf("下单异常超时")
 	}
 
-	createOrderReq:= &order.CreateReq{UserId: req.UserId,GoodsId: req.GoodsId,Num: req.Num}
-	deductReq:= &stock.DecuctReq{GoodsId: req.GoodsId,Num: req.Num}
+	createOrderReq := &order.CreateReq{UserId: req.UserId, GoodsId: req.GoodsId, Num: req.Num}
+	deductReq := &stock.DecuctReq{GoodsId: req.GoodsId, Num: req.Num}
 
 	//这里只举了saga例子，tcc等其他例子基本没啥区别具体可以看dtm官网
 
@@ -56,8 +57,8 @@ func (l *CreateLogic) Create(req types.QuickCreateReq,r *http.Request) (*types.Q
 
 	err = saga.Submit()
 	dtmimp.FatalIfError(err)
-	if err != nil{
-		return nil,fmt.Errorf("submit data to  dtm-server err  : %+v \n",err)
+	if err != nil {
+		return nil, fmt.Errorf("submit data to  dtm-server err  : %+v \n", err)
 	}
 
 	return &types.QuickCreateResp{}, nil

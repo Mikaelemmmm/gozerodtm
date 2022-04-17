@@ -5,6 +5,17 @@ Etcd:
   - 127.0.0.1:2379
   Key: stock.rpc
 
+# //if consul use
+#Consul:
+#  Host: 127.0.0.1:8500
+#  Key: stock.rpc
+#  Meta:
+#    Protocol: grpc
+#  Tag:
+#    -
+#      tag
+#      rpc
+
 DB:
-  DataSource: root:@tcp(127.0.0.1:3306)/dtm-gozero-stock?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  DataSource: root:root@tcp(127.0.0.1:3306)/dtm-gozero-stock?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
 

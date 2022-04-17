@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1ce90eb-1112-4e2b-a96f-29aac632d913" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/magento2plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/etc/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/etc/order.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/internal/logic/createLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/logic/createLogic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/etc/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/etc/order.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/etc/stock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/etc/stock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/stock.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/stock.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/go.mod" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/order-api/etc/order.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/order-api/internal/svc/serviceContext.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stock-srv/internal/logic/deductLogic.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stock-srv/internal/logic/deductRollbackLogic.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stock-srv/stock.go" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24JGewsTNei9jz4ErfVaM92OHFn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/Users/seven/Developer/goenv/gozerodtm",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected="Go 构建.go build order.go (1)">
+    <configuration name="go build order.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gozerodtm" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="gozerodtm" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/order-api/order.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build order.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gozerodtm" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="gozerodtm" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/order-srv/order.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build stock.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gozerodtm" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="gozerodtm" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/stock-srv/stock.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go 构建.go build order.go (1)" />
+        <item itemvalue="Go 构建.go build order.go" />
+        <item itemvalue="Go 构建.go build stock.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1ce90eb-1112-4e2b-a96f-29aac632d913" name="Changes" comment="" />
+      <created>1643341374908</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643341374908</updated>
+      <workItem from="1643341379921" duration="752000" />
+      <workItem from="1643342493721" duration="165000" />
+      <workItem from="1643342695989" duration="2219000" />
+      <workItem from="1644237595894" duration="34000" />
+      <workItem from="1647960071144" duration="1899000" />
+      <workItem from="1648008001369" duration="1513000" />
+      <workItem from="1649653027953" duration="286000" />
+      <workItem from="1649654949115" duration="359000" />
+      <workItem from="1649655361368" duration="20000" />
+      <workItem from="1649655452822" duration="1904000" />
+      <workItem from="1650159166925" duration="14630000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
