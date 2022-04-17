@@ -54,7 +54,7 @@ Target: 'etcd://localhost:2379/dtmservice'  将当前dtm的server直接注册到
 在dtm项目根目录下
 
 ```shell
-go run app/main.go dev
+go run app/main.go -c conf.yml
 ```
 
 
