@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ce90eb-1112-4e2b-a96f-29aac632d913" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/magento2plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-api/etc/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/etc/order.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-api/internal/logic/createLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/logic/createLogic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-api/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-srv/etc/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/etc/order.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-srv/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-srv/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-srv/etc/stock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/etc/stock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-srv/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock-srv/stock.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/stock.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +102,7 @@
       <workItem from="1649654949115" duration="359000" />
       <workItem from="1649655361368" duration="20000" />
       <workItem from="1649655452822" duration="1904000" />
-      <workItem from="1650159166925" duration="14630000" />
+      <workItem from="1650159166925" duration="14806000" />
     </task>
     <servers />
   </component>
