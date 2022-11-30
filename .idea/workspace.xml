@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ce90eb-1112-4e2b-a96f-29aac632d913" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/order-api/etc/order.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/etc/order.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/internal/handler/createHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/handler/createHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/internal/handler/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/handler/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/internal/logic/createLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/logic/createLogic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/internal/svc/serviceContext.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/internal/svc/serviceContext.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-api/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/logic/createLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/logic/createLogic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/logic/createRollbackLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/logic/createRollbackLogic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/model/ordermodel.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/model/ordermodel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/model/vars.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/model/vars.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/internal/svc/serviceContext.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/internal/svc/serviceContext.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-srv/order/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order-srv/order/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/logic/deductLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/logic/deductLogic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/logic/deductRollbackLogic.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/logic/deductRollbackLogic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/model/stockmodel.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/model/stockmodel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/model/vars.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/model/vars.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/internal/svc/serviceContext.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/internal/svc/serviceContext.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/stock.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/stock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-srv/stock/stock.go" beforeDir="false" afterPath="$PROJECT_DIR$/stock-srv/stock/stock.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +40,20 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="GOROOT" url="file:///usr/local/opt/go/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/datasql/dtm-gozero-order.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/datasql/dtm-gozero-stock.sql" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/go.mod" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/order-api/etc/order.yaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/order-api/internal/svc/serviceContext.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/order-srv/etc/order.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/order-srv/internal/logic/createLogic.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/order-srv/internal/logic/createRollbackLogic.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stock-srv/etc/stock.yaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stock-srv/internal/logic/deductLogic.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stock-srv/internal/logic/deductRollbackLogic.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stock-srv/stock.go" root0="FORCE_HIGHLIGHTING" />
@@ -35,20 +66,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/Users/seven/Developer/goenv/gozerodtm",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/admin/Developer/goenv/gozerodtm&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Go 构建.go build order.go (1)">
+}</component>
+  <component name="RunManager" selected="Go Build.go build order.go (1)">
     <configuration name="go build order.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="gozerodtm" />
       <working_directory value="$PROJECT_DIR$" />
@@ -78,9 +110,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go 构建.go build order.go (1)" />
-        <item itemvalue="Go 构建.go build order.go" />
-        <item itemvalue="Go 构建.go build stock.go" />
+        <item itemvalue="Go Build.go build order.go (1)" />
+        <item itemvalue="Go Build.go build order.go" />
+        <item itemvalue="Go Build.go build stock.go" />
       </list>
     </recent_temporary>
   </component>
@@ -103,6 +135,10 @@
       <workItem from="1649655361368" duration="20000" />
       <workItem from="1649655452822" duration="1904000" />
       <workItem from="1650159166925" duration="14806000" />
+      <workItem from="1669799740477" duration="370000" />
+      <workItem from="1669800120758" duration="563000" />
+      <workItem from="1669800753613" duration="3025000" />
+      <workItem from="1669806965917" duration="3893000" />
     </task>
     <servers />
   </component>
