@@ -3,7 +3,7 @@ package logic
 import (
 	"context"
 	"fmt"
-	"github.com/yedf/dtmcli/dtmimp"
+	"github.com/dtm-labs/client/dtmcli/dtmimp"
 	"gozerodtm/order-srv/order"
 	"gozerodtm/stock-srv/stock"
 	"net/http"
@@ -11,8 +11,8 @@ import (
 	"gozerodtm/order-api/internal/svc"
 	"gozerodtm/order-api/internal/types"
 
-	"github.com/tal-tech/go-zero/core/logx"
-	"github.com/yedf/dtmgrpc"
+	"github.com/dtm-labs/client/dtmgrpc"
+	"github.com/zeromicro/go-zero/core/logx"
 )
 
 // dtm已经通过配置，注册到下面这个地址，因此在dtmgrpc中使用该地址

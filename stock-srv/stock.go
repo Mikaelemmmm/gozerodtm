@@ -8,9 +8,9 @@ import (
 	"gozerodtm/stock-srv/internal/svc"
 	"gozerodtm/stock-srv/pb"
 
-	"github.com/tal-tech/go-zero/core/conf"
-	"github.com/tal-tech/go-zero/core/service"
-	"github.com/tal-tech/go-zero/zrpc"
+	"github.com/zeromicro/go-zero/core/conf"
+	"github.com/zeromicro/go-zero/core/service"
+	"github.com/zeromicro/go-zero/zrpc"
 	//_ "github.com/zeromicro/zero-contrib/zrpc/registry/consul" //if consul use
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

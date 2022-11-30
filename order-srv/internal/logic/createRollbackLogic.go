@@ -4,17 +4,17 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/tal-tech/go-zero/core/stores/sqlx"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"gozerodtm/order-srv/internal/model"
 
-	"github.com/yedf/dtmgrpc"
+	"github.com/dtm-labs/client/dtmgrpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
 	"gozerodtm/order-srv/internal/svc"
 	"gozerodtm/order-srv/pb"
 
-	"github.com/tal-tech/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type CreateRollbackLogic struct {

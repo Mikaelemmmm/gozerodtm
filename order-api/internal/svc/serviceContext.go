@@ -1,7 +1,7 @@
 package svc
 
 import (
-	"github.com/tal-tech/go-zero/zrpc"
+	"github.com/zeromicro/go-zero/zrpc"
 	"gozerodtm/order-api/internal/config"
 	"gozerodtm/order-srv/order"
 	"gozerodtm/stock-srv/stock"

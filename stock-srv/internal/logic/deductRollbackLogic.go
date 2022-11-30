@@ -4,16 +4,16 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/tal-tech/go-zero/core/stores/sqlx"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
 
-	"github.com/yedf/dtmgrpc"
+	"github.com/dtm-labs/client/dtmgrpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
 	"gozerodtm/stock-srv/internal/svc"
 	"gozerodtm/stock-srv/pb"
 
-	"github.com/tal-tech/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type DeductRollbackLogic struct {

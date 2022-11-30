@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/tal-tech/go-zero/core/stores/builder"
-	"github.com/tal-tech/go-zero/core/stores/sqlc"
-	"github.com/tal-tech/go-zero/core/stores/sqlx"
-	"github.com/tal-tech/go-zero/core/stringx"
+	"github.com/zeromicro/go-zero/core/stores/builder"
+	"github.com/zeromicro/go-zero/core/stores/sqlc"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
+	"github.com/zeromicro/go-zero/core/stringx"
 )
 
 var (
@@ -20,9 +20,9 @@ var (
 
 type (
 	OrderModel interface {
-		FindLastOneByUserIdGoodsId(userId,goodsId int64) (*Order, error)
-		Insert(tx *sql.Tx,data *Order) (sql.Result, error)
-		Update(tx *sql.Tx,data *Order) error
+		FindLastOneByUserIdGoodsId(userId, goodsId int64) (*Order, error)
+		Insert(tx *sql.Tx, data *Order) (sql.Result, error)
+		Update(tx *sql.Tx, data *Order) error
 	}
 
 	defaultOrderModel struct {
@@ -46,10 +46,10 @@ func NewOrderModel(conn sqlx.SqlConn) OrderModel {
 	}
 }
 
-func (m *defaultOrderModel) FindLastOneByUserIdGoodsId(userId,goodsId int64) (*Order, error) {
+func (m *defaultOrderModel) FindLastOneByUserIdGoodsId(userId, goodsId int64) (*Order, error) {
 	query := fmt.Sprintf("select %s from %s where `user_id` = ? and goods_id =? order by id desc limit 1 ", orderRows, m.table)
 	var resp Order
-	err := m.conn.QueryRow(&resp, query, userId,goodsId)
+	err := m.conn.QueryRow(&resp, query, userId, goodsId)
 	switch err {
 	case nil:
 		return &resp, nil
@@ -60,14 +60,13 @@ func (m *defaultOrderModel) FindLastOneByUserIdGoodsId(userId,goodsId int64) (*O
 	}
 }
 
-func (m *defaultOrderModel) Insert(tx *sql.Tx,data *Order) (sql.Result, error) {
+func (m *defaultOrderModel) Insert(tx *sql.Tx, data *Order) (sql.Result, error) {
 	query := fmt.Sprintf("insert into %s (%s) values (?, ?, ? ,?)", m.table, orderRowsExpectAutoSet)
-	return tx.Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState)
+	return tx.Exec(query, data.UserId, data.GoodsId, data.Num, data.RowState)
 }
 
-func (m *defaultOrderModel) Update(tx *sql.Tx,data *Order) error {
+func (m *defaultOrderModel) Update(tx *sql.Tx, data *Order) error {
 	query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, orderRowsWithPlaceHolder)
-	_, err := tx.Exec(query, data.UserId, data.GoodsId, data.Num,data.RowState, data.Id)
+	_, err := tx.Exec(query, data.UserId, data.GoodsId, data.Num, data.RowState, data.Id)
 	return err
 }
-
