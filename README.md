@@ -54,7 +54,13 @@ Target: 'etcd://localhost:2379/dtmservice'  将当前dtm的server直接注册到
 在dtm项目根目录下
 
 ```shell
-go run app/main.go -c conf.yml
+go run main.go -c conf.yml
+```
+
+输出类似下面的信息代表就成功了
+
+```
+{"@timestamp":"2023-04-27T16:48:17.377+08:00","caller":"consul@v0.0.0-20230212061721-86dbe4a9e613/register.go:80","content":"update ttl","level":"info"}
 ```
 
 
