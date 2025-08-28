@@ -70,7 +70,7 @@ func (l *DeductLogic) Deduct(in *pb.DecuctReq) (*pb.DeductResp, error) {
 		}
 
 		//！！开启测试！！ ： 测试订单回滚更改状态为失效，并且当前库扣失败不需要回滚
-		//return fmt.Errorf("扣库存失败 err : %v , in:%+v \n",err,in)
+		//return status.Error(codes.Aborted, fmt.Sprintf("扣库存失败 , in:%+v \n", in))
 
 		return nil
 	}); err != nil {
